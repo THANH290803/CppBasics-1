@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{96ecfddf-bc80-4f32-aa6e-914e8b2bdf1a}</ProjectGuid>
-    <RootNamespace>My02Basicsiovartypesoperactor</RootNamespace>
+    <ProjectGuid>{28fc3011-310b-4d70-95a5-69f4898ea9ba}</ProjectGuid>
+    <RootNamespace>My09pointersreferencescpp</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

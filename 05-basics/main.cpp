@@ -3,9 +3,60 @@
 
 #include <iostream>
 
+#include<string>
+
+using namespace std;
+
+
 int main()
 {
     std::cout << "Hello World!\n";
+    std::cout << "Enter number of students: ";
+    short number; // so luong sinh viên
+    cin >> number;
+
+    cin.ignore(1000, '\n');
+
+    string name[50];
+    short age[50];
+    string klass[50];
+
+    double math[50], physical[50], chemistry[50], avg[50];
+
+
+    for (int i = 0; i < number; ++i) {
+
+        cout << "Enter name of student " << i + 1 << " : ";
+        getline(cin, name[i]);
+
+        cout << "Enter age: ";
+        cin >> age[i];
+
+        cin.ignore(1000, '\n');
+
+        cout << "Enter class: ";
+        getline(cin, klass[i]);
+
+        //cout << name[i] << '\n';
+        //cout << age[i] << '\n';
+        //cout << klass[i] << '\n';
+
+        cout << "Enter marks: ";
+        cin >> math[i] >> physical[i] >> chemistry[i];
+
+        avg[i] = (math[i] + physical[i] + chemistry[i]) / 3;
+
+        cin.ignore(1000, '\n');
+
+    }
+    for (int i = 0; i < number; ++i) {
+        cout << "student " << i << ": " << '\n';
+        cout << "Math: " << math[i] << '\n';
+        cout << "Physical: " << physical[i] << '\n';
+        cout << "Chemistry: " << chemistry[i] << '\n';
+        cout << "avg: " << avg[i] << '\n';
+
+    }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

@@ -2,10 +2,50 @@
 //
 
 #include <iostream>
+#include <string>
+
+using namespace std;
 
 int main()
 {
     std::cout << "Hello World!\n";
+    cout << "Hello BT-D05-K13\n";
+
+    //cout << "Hello, my name is ABC" << '\n';
+    //cout << "I am 18 years old" << std::endl;
+    //cout << "I am from HaNoi" << '\n';
+
+    std::string name;
+    int age;
+    string address;
+
+    cout << "Enter your name: ";
+    //cin >> name;
+    std::getline(std::cin, name);
+
+    cout << "Enter your age: ";
+    cin >> age;
+
+    // ignore newline
+    std::cin.ignore(1000, '\n');
+
+    cout << "Enter your address: ";
+    //cin >> address;
+    std::getline(std::cin, address);
+
+    cout << "Hello, my name is " << name << '\n';
+    cout << "I am " << age << " years old" << '\n';
+    cout << "I am from " << address << '\n';
+
+
+    //std::cout << "Hello BT-D05-K13\n";
+    //std::cout << "Hello BT-D05-K13\n";
+    //std::cout << "Hello BT-D05-K13\n";
+    //std::cout << "Hello BT-D05-K13\n";
+    /*
+    std::cout << "Hello BT-D05-K13\n";
+    std::cout << "Hello BT-D05-K13\n";
+    */
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
