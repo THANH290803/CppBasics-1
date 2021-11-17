@@ -5,11 +5,13 @@
 #include <string>
 
 using namespace std;
-
+/*
 void printSize(int* array) {
-    cout << sizeof(array); // prints size of pointer 
+    cout << sizeof(array) << '\n'; // prints size of pointer 
 }
-
+void printSize2(int array[]) {
+    cout << sizeof(array) << '\n'; // prints size of pointer 
+}*/
 int main()
 {
     std::cout << "Hello World!\n";
@@ -123,8 +125,25 @@ int main()
 // cout << sizeof(ptr) << '\n';
 
    // array decays to pointer 
+   // int array[]{ 1, 2, 3, 4, 5, 7, 8 };
 
+   // cout << sizeof(array) << '\n';
 
+   // printSize2(array);
+  //  printSize(array);
+
+/*************************************************************************************************************************/
+    cout << "enter number of intergers: ";
+    int length{}; 
+    cin >> length;
+
+    int* array{ new int{length} };
+    cout << "created array of length " << length << " elements";
+
+    array[0] = 10;
+
+    // ........
+   // delete[] array; 
     
 }
 
