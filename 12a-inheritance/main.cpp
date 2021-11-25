@@ -8,7 +8,6 @@ using namespace std;
 
 // base class
 class Employee {
-
 protected: 
     int m_id;
     string m_name;
