@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "14-VitualFunctionsAndPolymo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "14-Polymorphism-example", "14-Polymorphism-example\14-Polymorphism-example.vcxproj", "{725534D5-1D82-4FC9-974B-19E8D105EC5A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "15-Mini-project", "15-Mini-project\15-Mini-project.vcxproj", "{27AF2545-9A19-4147-AED4-8E5BC7C879B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -111,6 +113,14 @@ Global
 		{725534D5-1D82-4FC9-974B-19E8D105EC5A}.Release|x64.Build.0 = Release|x64
 		{725534D5-1D82-4FC9-974B-19E8D105EC5A}.Release|x86.ActiveCfg = Release|Win32
 		{725534D5-1D82-4FC9-974B-19E8D105EC5A}.Release|x86.Build.0 = Release|Win32
+		{27AF2545-9A19-4147-AED4-8E5BC7C879B1}.Debug|x64.ActiveCfg = Debug|x64
+		{27AF2545-9A19-4147-AED4-8E5BC7C879B1}.Debug|x64.Build.0 = Debug|x64
+		{27AF2545-9A19-4147-AED4-8E5BC7C879B1}.Debug|x86.ActiveCfg = Debug|Win32
+		{27AF2545-9A19-4147-AED4-8E5BC7C879B1}.Debug|x86.Build.0 = Debug|Win32
+		{27AF2545-9A19-4147-AED4-8E5BC7C879B1}.Release|x64.ActiveCfg = Release|x64
+		{27AF2545-9A19-4147-AED4-8E5BC7C879B1}.Release|x64.Build.0 = Release|x64
+		{27AF2545-9A19-4147-AED4-8E5BC7C879B1}.Release|x86.ActiveCfg = Release|Win32
+		{27AF2545-9A19-4147-AED4-8E5BC7C879B1}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
