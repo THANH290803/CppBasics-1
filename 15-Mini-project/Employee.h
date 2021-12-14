@@ -24,6 +24,8 @@ public:
 
 	virtual void input();
 
-	// getters, setters 
+	// getters, setters
+	string getName();
+
 };
 

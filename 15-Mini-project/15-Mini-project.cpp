@@ -25,6 +25,92 @@ void showAll(vector<Employee*> list) {
 	}
 }
 
+void showMenust() {
+	cout << "----------------------staff selection------------------------" << '\n';
+	cout << "1 Programming staff" << '\n';
+	cout << "2 Test staff" << '\n';
+	cout << "3 Management staff" << '\n';
+	cout << "0 Exit" << '\n';
+	cout << "-------------------------------------------------------------" << '\n';
+}
+
+void Addemployee(vector<Employee*> &list) {
+	int choose;
+	showMenust();
+
+	bool exit{ false };
+
+	while (true)
+	{
+		cin >> choose;
+		switch (choose)
+		{
+		case 1: {
+			Employee* e{ new Programmer{} };
+
+			e->input();
+
+			list.push_back(e);
+		}
+			  break;
+
+		case 2: {
+			Employee* e{ new Tester{} };
+
+			e->input();
+
+			list.push_back(e);
+		}
+			  break;
+
+		case 3: {
+			Employee* e{ new Manager{} };
+
+			e->input();
+
+			list.push_back(e);
+		}
+			  break;
+
+		case 0:
+			exit = true;
+			break;
+		}
+
+		if (exit) {
+			break;
+		}
+		showMenust();
+	}
+}
+
+Employee* findByName(vector<Employee*> &list, string name) {
+	for (auto e : list) {
+		if (e->getName().compare(name) == 0) {
+			return e;
+		}
+
+		return nullptr;
+	}
+}
+
+void Editemployee(vector<Employee*> &list, string name) {
+	auto e = findByName(list, name);
+
+	e->input();
+}
+
+void removeEmployee(vector<Employee*>& list, string name) {
+	auto e = findByName(list, name);
+
+	auto index = std::find(list.begin(), list.end(), e);
+
+	list.erase(index);
+}
+
+
+
+
 int main()
 {
 	//Employee* e{ new Employee() };
@@ -89,20 +175,30 @@ int main()
 	int choose;
 	bool exit{ false };
 
+	string name;
+
 	showMenu();
 	while (true)
 	{
 		cin >> choose;
+		cin.ignore(100, '\n');
 		switch (choose)
 		{
 		case 1:
 			cout << "Add employee" << '\n';
+			Addemployee(list);
 			break;
 		case 2:
 			cout << "Edit employee" << '\n';
+			cout << "Enter name: ";
+			getline(cin, name);
+			Editemployee(list, name);
 			break;
 		case 3:
 			cout << "Remove employee" << '\n';
+			cout << "Enter name: ";			
+			getline(cin, name);			
+			removeEmployee(list, name);
 			break;
 		case 4:
 			cout << "Sort by name" << '\n';
