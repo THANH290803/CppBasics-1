@@ -1,11 +1,14 @@
 ﻿#include <iostream>
 #include <vector>
 #include <fstream>
+
 #include "Employee.h"
 #include "Programmer.h"
 #include "Tester.h"
 #include "Manager.h"
 #include "Utils.h"
+
+#include <algorithm> // for std::sort()
 
 void showMenu() {
 	cout << "-------------------Menu------------------------" << '\n';
@@ -25,7 +28,7 @@ void showAll(vector<Employee*> list) {
 	}
 }
 
-void showMenust() {
+void showAddMenu() {
 	cout << "----------------------staff selection------------------------" << '\n';
 	cout << "1 Programming staff" << '\n';
 	cout << "2 Test staff" << '\n';
@@ -36,7 +39,7 @@ void showMenust() {
 
 void Addemployee(vector<Employee*> &list) {
 	int choose;
-	showMenust();
+	showAddMenu();
 
 	bool exit{ false };
 
@@ -80,7 +83,7 @@ void Addemployee(vector<Employee*> &list) {
 		if (exit) {
 			break;
 		}
-		showMenust();
+		showAddMenu();
 	}
 }
 
@@ -189,19 +192,42 @@ int main()
 			Addemployee(list);
 			break;
 		case 2:
+		{
 			cout << "Edit employee" << '\n';
 			cout << "Enter name: ";
 			getline(cin, name);
-			Editemployee(list, name);
-			break;
+			//Editemployee(list, name);
+			for (auto e : list) {
+				if (e->getName().compare(name) == 0) {
+					e->input();
+					break;
+				}
+			}
+		}
+		break;
 		case 3:
+		{
 			cout << "Remove employee" << '\n';
 			cout << "Enter name: ";			
 			getline(cin, name);			
-			removeEmployee(list, name);
-			break;
-		case 4:
+			//removeEmployee(list, name);
+			for (auto e : list) {
+				if (e->getName().compare(name) == 0) {
+					auto index = std::find(list.begin(), list.end(), e);
+					list.erase(index);
+					break;
+				}
+			}
+		}
+	       break;
+		case 4: 
 			cout << "Sort by name" << '\n';
+			std::sort(
+				list.begin(),
+				list.end(),
+				[](const auto& e1, const auto& e2) {return e1->getName() < e2->getName(); }
+			);
+			showAll(list);
 			break;
 		case 5:
 			cout << "Show all employees" << '\n';
